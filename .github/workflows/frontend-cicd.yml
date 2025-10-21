@@ -35,6 +35,7 @@ jobs:
           SHORT_SHA=$(echo $GITHUB_SHA | cut -c1-7)
           echo "IMAGE_TAG=$SHORT_SHA" >> $GITHUB_ENV
           echo "Set IMAGE_TAG to: $SHORT_SHA"
+          echo "Original GITHUB_SHA: $GITHUB_SHA"
 
       - name: Azure login
         uses: azure/login@v2
