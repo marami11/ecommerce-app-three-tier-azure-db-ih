@@ -12,7 +12,11 @@ import {
   CreateOrderData 
 } from '../types';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:3001/api';
+// Prefer runtime origin when available (works behind ingress), fallback to env, then localhost
+const API_BASE_URL =
+  (typeof window !== 'undefined' && window.location && window.location.origin
+    ? `${window.location.origin}/api`
+    : process.env.REACT_APP_API_URL) || 'http://localhost:3001/api';
 
 // Create axios instance
 const api = axios.create({

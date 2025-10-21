@@ -116,3 +116,8 @@ Thumbs.db
 *.db
 *.sqlite
 *.sqlite3
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.backup
+*.log
