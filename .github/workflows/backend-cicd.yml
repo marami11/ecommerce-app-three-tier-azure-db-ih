@@ -46,6 +46,7 @@ jobs:
 
       - name: Build Docker image
         run: |
+          echo "Building image: ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}"
           docker build \
             -t ${{ secrets.ACR_LOGIN_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }} \
             -f ecommerce-app-backend/Dockerfile \
